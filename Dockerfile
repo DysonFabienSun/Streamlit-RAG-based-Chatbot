@@ -1,5 +1,5 @@
-# Use the official Python image from the Docker Hub
-FROM python:3.9-slim
+# Docker
+FROM python:3.12.3-slim
 
 # Set the working directory in the container
 WORKDIR /app
@@ -11,7 +11,7 @@ COPY requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
 
 # Copy the rest of your application code into the container
-COPY main.py .
+COPY src/ .
 
 # Command to run the Streamlit application
 CMD ["streamlit", "run", "main.py", "--server.port=8501", "--server.address=0.0.0.0"]

@@ -307,7 +307,7 @@ class CoreModel:
     metadata_filter: dict
         The metadata filter to use for the database. Defaults to none but is updated as a psuedo-global variable by get_response().
     """
-    def __init__(self, *, api_key = os.environ("OPENAI_API_KEY"),	
+    def __init__(self, *, api_key = os.environ["OPENAI_API_KEY"],	
                  base_url = r'https://api.gptsapi.net/v1', 
                  base_dir = os.getcwd(),
                  chat_model_name = "gpt-4o-mini", embedding_model_name = "text-embedding-3-small",

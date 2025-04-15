@@ -201,7 +201,7 @@ class Interface:
             time.sleep(0.1)
 
 if __name__ == '__main__':
-    api_key = os.environ('OPENAI_API_KEY')
+    api_key = os.environ['OPENAI_API_KEY']
     base_url = r'https://api.gptsapi.net/v1'
     # interface = Interface(api_key, base_url, "gpt-4o-mini", "text-embedding-3-large")
     interface = Interface(api_key, base_url, "gpt-4o", "text-embedding-3-small")

@@ -1,6 +1,6 @@
 import streamlit as st
 import time, os
-import torch, logging
+import logging
 import pandas as pd
 import asyncio, traceback
 from streamlit_file_browser import st_file_browser
@@ -19,14 +19,12 @@ def load_client():  # Loads the DFSinterface class from the DFSinterface.py file
     return DFSinterface
 DFSinterface = load_client()
 
-torch.classes.__path__ = []  # this prevents a torch error message from being displayed (dunno why)
-
 @st.cache_resource
 def load_interface(api_key, base_url, chat_model_name, embedding_model_name):
     interface = DFSinterface.Interface(api_key, base_url, chat_model_name, embedding_model_name, logging_level=logging.DEBUG)
     return interface
 
-api_key = os.environ("OPENAI_API_KEY")
+api_key = os.environ["OPENAI_API_KEY"]
 base_url = r'https://api.gptsapi.net/v1'
 
 st.sidebar.title("Options")
