@@ -286,8 +286,8 @@ async def embed_page():  # the page that handles embedding files
                 interface.core_model.delete_entire_database()
                 st.rerun()
 
-    directory_path = r"D:\1. Workflow\1. Projects\2025-2-5, Project, big server go brrrrr\input"
-    base_dir = r"D:\1. Workflow\1. Projects\2025-2-5, Project, big server go brrrrr"
+    directory_path = r"input"
+    base_dir = r""
 
     st.subheader("Selected Files")  # the selected files to be embedded will be shown in a dataframe
     file_list = list(st.session_state.selected_embed_file)
